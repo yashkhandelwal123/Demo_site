@@ -7,6 +7,7 @@ const userController = require('../controllers/user_controller');
 router.get('/sign_up' , userController.signUp);
 router.get('/sign_in' , userController.signIp);
 
+router.post('/create' , userController.create);
 
 router.get('/profile' , userController.profile);
 
