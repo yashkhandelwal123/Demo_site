@@ -1,12 +1,12 @@
 // connnection
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/contact_list_db');
+mongoose.connect('mongodb://localhost/demosite_db');
 
 
 const db = mongoose.connection;
 
 
-db.on('error', function(err) { console.log(err.message); });
+db.on('error', function(err) { console.error.bind(console ,'err in connecting to database'); });
 
 
 db.once('open', function() {
