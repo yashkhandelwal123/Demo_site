@@ -1,6 +1,6 @@
 // connnection
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/contact_list_db');
+mongoose.connect('mongodb://localhost/demosite_db');
 
 
 const db = mongoose.connection;

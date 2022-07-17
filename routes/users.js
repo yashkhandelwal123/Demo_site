@@ -9,10 +9,11 @@ router.get('/sign_in' , userController.signIp);
 
 router.post('/create' , userController.create);
 
-router.get('/profile' , userController.profile);
+router.get('/profile', passport.checkAuthentication, userController.profile);
 
-router.post('/session' , passport.authenticate('local' , 
-     {failureRedirect: '/user/sign_in'},)
-  ,userController.create)
+router.post('/session' , passport.authenticate(
+    'local' , 
+    {failureRedirect: '/user/sign_in'},)
+  ,userController.session)
 
 module.exports = router;
