@@ -1,18 +1,24 @@
 const User = require('../models/user');
 
 module.exports.profile = function(req,res){
-    return res.render('user profile' , {
+    return res.render('user_profile.ejs' , {
         title: 'user profile'
     });
 }
 
 module.exports.signUp = function(req ,res){
+    if(req.isAuthenticated()){
+        return res.redirect('/user/profile')
+    }
     return res.render('user_sign_up.ejs',{
         title :"sign up"
     });
 }
 
 module.exports.signIp = function(req ,res){
+    if(req.isAuthenticated()){
+        return res.redirect('/user/profile')
+    }
     return res.render('user_sign_in.ejs');
 }
 module.exports.create = function(req,res){

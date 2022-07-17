@@ -8,11 +8,13 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport_local_strategy');
+//using connect-mongo to store session when server is not running. it requires argument ,which is to be store
+const MongoStore = require('connect-mongo');
 
 
 app.use(express.urlencoded());
 
-app.use(cookieParser());
+app.use(cookieParser('secret'));
 // using routers
 app.use(express.static('./assets'));
 
@@ -21,6 +23,10 @@ app.use(express.static('./assets'));
 app.set('view engine' , ' ejs');
 app.set('views', './views')
 
+// updated version to store session
+app.use(session({
+    store: MongoStore.create({ mongoUrl: 'mongodb://localhost/demosite_db' })
+  }));
 
 app.use(session({
     name: 'demo_site',
@@ -29,11 +35,20 @@ app.use(session({
     resave:false,
     cookie:{
         maxAge:(1000*60*100)
-    }
+    },
+    store: MongoStore.create({
+        
+        mongoUrl: 'mongodb://localhost/demosite_db',
+        autoRemove: 'disabled'
+        
+    }, function(err ){
+        console.log(err || 'connect-mongodb setup ok');
+    })
 }));
 
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session()); 
+app.use(passport.setAuthenticatedUser);
 app.use('/' , require('./routes/index.js'))
 
 
