@@ -1,0 +1,29 @@
+#page_heading{
+    height: 15%;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+    #site{
+      font-size: 30px;
+      font-weight: 200;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      padding: 30px;
+    }
+
+    // ul{
+    //     font-size: medium;
+    // }
+    #login_details{
+      width: 20%;
+    
+     ul{
+        padding: 20px;
+        display: flex;;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+}

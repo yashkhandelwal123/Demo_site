@@ -1,0 +1,40 @@
+<header id="page_heading">
+
+    <!-- <div id="site_name"> -->
+        <div id="site">Demo Site</div>
+        <div id="login_details">
+            <ul>
+                <% if (locals.user){ %>
+                    <div>
+                        <li>
+                            <a href="/user/profile">
+                                <%= user.name %>
+                            </a>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <a href="/user/sign-out">Sign Out</a>
+                        </li>
+                    </div>
+                <% }else{ %>
+        
+                    <div>
+                        <li>
+                            <a href="/user/sign_in">Sign In</a>
+                        </li>
+                    </div>
+        
+                    <div>
+                        <li>
+                            <a href="/user/sign_up">Sign Up</a>
+                        </li>
+                    </div>
+        
+        
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+</header>
