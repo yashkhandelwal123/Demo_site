@@ -1,38 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/home.css">
-    <title>
-        <%= title %>
-    </title>
-</head>
-<body>
-    <!-- <% if (locals.user){ %>
-        <li>
-            <a href="/user/profile">
-                <%= user.name %>
-            </a>
-        </li>
-        <li>
-            <a href="/user/sign-out">Sign Out</a>
-        </li>
-    <% }else{ %>
+<h1>Demo site <%= title %></h1> 
+ 
 
-        <li>
-            <a href="/user/sign_in">Sign In</a>
-        </li>
+<section id="feed-post">
+    <h4>Post</h4>
+    <form action="/post/create" id="new-post-form" method="post">
+        <textarea name="content" cols="30" rows="3" placeholder="Type here"></textarea>
+        <input type="submit" value="Post">
+    </form>
 
-        <li>
-            <a href="/user/sign_up">Sign Up</a>
-        </li>
-
-
-    <% } %> -->
-<!-- </ul> -->
-
-   <h1>Demo site <%= title %></h1> 
-</body>
-</html>
+    <div id="post_container">
+        <ul>
+            <% for(post of post){ %>
+                <li>
+                    <%= post.content %>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</section>
