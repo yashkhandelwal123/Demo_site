@@ -10,9 +10,16 @@
 
     <div id="post_container">
         <ul>
-            <% for(post of post){ %>
+            <% for(post of posts){ %>
                 <li>
-                    <%= post.content %>
+                    <p>
+                           <%= post.content %>
+                        <small>
+                            <%= post.user %>
+                            <!-- post.user.name -->
+                        </small>
+                        <!-- <%= post.user %> -->
+                    </p>
                 </li>
             <% } %>
         </ul>
