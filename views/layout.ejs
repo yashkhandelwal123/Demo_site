@@ -4,6 +4,8 @@
         <link rel="stylesheet" href="/css/layout.css">
         <link rel="stylesheet" href="/css/header.css">
         <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/home.css">
+
 
         <%- style %>
         
@@ -11,15 +13,15 @@
 
     <body>
         <%- include('_header.ejs'); %>
-        
+        <!-- <%- script %> -->
         <main id="layout-main">
             <%- body %>
-
+            <!-- <br> -->
         </main>
-
-
-        <%- include('_footer'); %>
-
+    
+        <%- include('_footer.ejs'); %>
         <%- script %>
-        
     </body>
+        
+        
+    

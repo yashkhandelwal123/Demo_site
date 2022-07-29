@@ -1,0 +1,30 @@
+#layout-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  color: white;
+  background: grey;
+}
+
+#layout-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+#layout-footer p {
+  font-size: 20px;
+}
+
+#layout-footer ul {
+  margin-right: 15px;
+}
+
+#layout-footer ul a:hover {
+  color: aqua;
+  font-size: larger;
+}
+
+#layout-footer .footer-nav ul {
+  list-style: none;
+}

@@ -1,7 +1,7 @@
 <h1>Demo site <%= title %></h1> 
  
 
-<section id="feed-post">
+<section id="feed-post" class="main_content">
     <h4>Post</h4>
     <% if(locals.user){ %>
     <form action="/post/create" id="new-post-form" method="post">
@@ -13,14 +13,16 @@
     <div id="post_container">
         <ul>
             <% for(post of post){ %>
-                <li>
-                    <p>
-                           <%= post.content %>
-                           <br>
+                <li id="to_specify">
+                    <p id="details">
                         <small>
                             <%= post.user.email %>
                             <!-- post.user.name -->
                         </small>
+                        <br>
+                        <%= post.content %>
+                           <!-- <br> -->
+                        
                         <!-- <%= post.user %> -->
                     </p>
                     
@@ -37,12 +39,16 @@
                             <ul id="post-comments-<%= post._id %>">
                                 <% for (comment of post.comments){%>
                                     
-                                <p>
-                                    <%= comment.content %>
-                                    <br>
-                                    <small>
-                                        <%= comment.user.name %>
-                                    </small>
+                                <p id="comments">
+                                    <div>
+                                        <%= comment.content %>
+                                    </div>
+                                    
+                                    <div>
+                                        <small>
+                                            <%= comment.user.name %>
+                                        </small>
+                                    </div>
                                 </p>    
                                 <%} %>
                             </ul>
@@ -55,3 +61,23 @@
         </ul>
     </div>
 </section>
+<footer id="layout-footer">
+    <div>
+        <p>
+            Created By:- Yash Khandelwal
+        </p>
+    </div>
+
+    <div>
+        <nav class="footer-nav">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/user/profile">Profile</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>

@@ -1,0 +1,32 @@
+body {
+  margin: 0px;
+  text-align: center;
+}
+
+body ul {
+  list-style: none;
+}
+
+body .main_content #to_specify {
+  border-radius: 10px;
+  margin: 5px;
+}
+
+body .main_content #post_container {
+  margin-left: 25%;
+  width: 50%;
+}
+
+#post_comment_list ul {
+  border: 1px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#comments {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,6 +1,49 @@
 body{
     margin: 0px;
+    text-align: center;
+    // margin-left: 40%;
+    // position: relative;
+    // min-height: 100vh;
+    ul{
+        list-style: none;
+    }
+    .main_content{
+        #to_specify{
+            // border: 1px solid;
+            border-radius: 10px;
+            margin: 5px;
+        }
+        
+        #post_container{
+            // border: ;
+            margin-left: 25%;
+        //   border: 1px solid;
+          width: 50%;
+
+        }
+    }
 } 
+// #post-comments-<%= post._id %>{
+
+// }
+#post_comment_list ul{
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#details{
+    // border: 1px solid;
+    
+}
+
+#comments{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 // h1{
 //     font-size: larger;
 // }
