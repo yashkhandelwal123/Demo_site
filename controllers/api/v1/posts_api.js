@@ -1,5 +1,7 @@
 const Post = require('../../../models/post')
 const Comment = require('../../../models/comment');
+const User = require('../../../models/user')
+const { createIndexes } = require('../../../models/post');
 
 module.exports.index = async function(req , res){
 
@@ -68,4 +70,44 @@ module.exports.destroy = async function(req, res){
     //     // }
 
     // });
+}
+
+module.exports.create = function(req,res){
+    // if(req.body.password != req.body.confirm_password){
+    //    return res.redirect('back');
+    // }
+
+    // let user = User.findOne({email : req.body.email})
+       // console.log(user.email)
+    //    if(err){
+    //        console.log(`erroe in finding user in signning up`);
+    //        return;
+    //    }
+
+    //    if(!user){
+        var data = User(req.body);
+        data.save()
+        .then(item => {
+            res.send("item save to data base");
+        })
+        .catch(err => {
+            res.status(400).send("unable to save in data base");
+        })
+
+           User.create(req.body, function(err, user){
+               if(err){console.log('error in creating user while signing up'); return}
+
+               return res.redirect('/user/sign_in');
+           })
+
+    // //    }
+    // //    else{
+    //        return res.json(200 ,{
+    //         message: "post created",
+    //         users : user
+    //        });
+    //    }
+    // }
+
+
 }

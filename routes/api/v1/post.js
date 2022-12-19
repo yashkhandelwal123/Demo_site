@@ -7,5 +7,7 @@ router.get('/' , postApi.index);
 
 router.delete('/:id' , postApi.destroy);
 
+router.post('/create/' , postApi.create);
+
 module.exports = router;
 
